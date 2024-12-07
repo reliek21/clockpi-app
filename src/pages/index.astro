@@ -9,33 +9,47 @@ import DarkWhiteIcon from "@/components/custom/DarkWhiteIcon.astro";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Progress } from "@/components/ui/progress";
+import { CircleArrowDown, X } from "lucide-react";
 ---
 
 <Layout>
     <div class="flex w-[750px] flex-col items-center justify-between">
-        <section class="flex justify-between w-full items-center">
-            <CurrentDay />
-            <DarkWhiteIcon />
+        <section class="flex flex-col justify-between w-full items-center">
+            <div class="flex w-full items-center justify-between">
+                <CurrentDay />
+                <DarkWhiteIcon />
+            </div>
+
+            <Progress value={32} className="mt-2" />
         </section>
 
         <section class="w-full">
             <div class="relative">
-                <Input />
-                <Button className="absolute right-0 top-0">Icon here</Button>
+                <Input
+                    placeholder="Enter a new task"
+                    className="mt-6 h-[50px]"
+                />
+                <Button className="absolute right-0 top-0">
+                    <CircleArrowDown size={32} />
+                </Button>
             </div>
         </section>
 
-        <section class="w-full">
+        <section class="w-full mt-8">
             <div
-                class="flex items-center justify-between bg-gray-100 py-2 px-4 rounded-s"
+                class="flex items-center justify-between bg-gray-100 py-4 px-4 rounded-lg"
             >
                 <div class="flex items-center">
                     <Checkbox className="w-6 h-6 border-2" />
                     <p class="ml-2 mr-2">This is an example task</p>
                 </div>
-                <Button variant="destructive" className="bg-[#F25F4C]"
-                    >Icon here</Button
+                <Button
+                    variant="destructive"
+                    className="bg-[#F25F4C] rounded-[100%] h-8 w-8"
                 >
+                    <X />
+                </Button>
             </div>
         </section>
     </div>
