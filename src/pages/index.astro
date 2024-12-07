@@ -1,8 +1,42 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
+
+// Components
+import CurrentDay from "@/components/custom/CurrentDay.astro";
+import DarkWhiteIcon from "@/components/custom/DarkWhiteIcon.astro";
+
+// UI Components
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 ---
 
 <Layout>
-	<Welcome />
+    <div class="flex w-[750px] flex-col items-center justify-between">
+        <section class="flex justify-between w-full items-center">
+            <CurrentDay />
+            <DarkWhiteIcon />
+        </section>
+
+        <section class="w-full">
+            <div class="relative">
+                <Input />
+                <Button className="absolute right-0 top-0">Icon here</Button>
+            </div>
+        </section>
+
+        <section class="w-full">
+            <div
+                class="flex items-center justify-between bg-gray-100 py-2 px-4 rounded-s"
+            >
+                <div class="flex items-center">
+                    <Checkbox className="w-6 h-6 border-2" />
+                    <p class="ml-2 mr-2">This is an example task</p>
+                </div>
+                <Button variant="destructive" className="bg-[#F25F4C]"
+                    >Icon here</Button
+                >
+            </div>
+        </section>
+    </div>
 </Layout>
