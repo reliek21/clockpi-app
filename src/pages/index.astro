@@ -5,11 +5,11 @@ import Layout from "@/layouts/Layout.astro";
 
 // UI Components
 
-import { Progress } from "@/components/ui/progress";
+import HeaderSection from "@/sections/HeaderSection.astro";
+import { TaskSection } from "@/sections/TaskSection";
 ---
 
 <Layout>
-    <div class="flex w-[750px] flex-col items-center justify-between">
-        <section class="w-full mt-8"></section>
-    </div>
+    <HeaderSection />
+    <TaskSection client:load />
 </Layout>
