@@ -1,0 +1,13 @@
+---
+import { format } from "date-fns";
+
+const currentDate: Date = new Date();
+
+const getDay: string = format(currentDate, "EEEE");
+const getCompleteDay: string = format(currentDate, "EEEE, MMMM d");
+---
+
+<div>
+    <h1 class="text-[36px] font-bold">{getDay}</h1>
+    <p class="text-base">{getCompleteDay}</p>
+</div>
