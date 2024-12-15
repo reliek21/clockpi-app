@@ -1,5 +1,5 @@
 import React, { useState, type FC, type ReactNode } from "react";
-import { Input } from "../../ui/input";
+import { Input } from "@/components/ui/input";
 
 interface InputTaskProps {
   onNewTask: (task: string) => void;

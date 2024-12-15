@@ -1,9 +1,10 @@
 import { useEffect, useState, type ReactNode } from "react";
 
+import { Task } from "@/components/custom/Task/Task";
+import { InputTask } from "@/components/custom/Task/InputTask";
+
 import { type TaskProps } from "@/lib/storage-utils";
 import { LocalStorageService } from "@/lib/localstorage";
-import { InputTask } from "@/components/custom/Task/InputTask";
-import { Task } from "@/components/custom/Task/Task";
 
 const localStorageKey: string = "tasks";
 
@@ -39,14 +40,9 @@ export const TaskSection = (): ReactNode => {
         <InputTask onNewTask={onAddTask} />
 
         <div className="mt-10">
-          {tasks.map((task: TaskProps) => (
+          {tasks.map(({ id, title, completed }: TaskProps) => (
             <div className="mt-2">
-              <Task
-                key={task.id}
-                id={task.id}
-                title={task.title}
-                completed={task.completed}
-              />
+              <Task key={id} id={id} title={title} completed={completed} />
             </div>
           ))}
         </div>
