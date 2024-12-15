@@ -1,19 +1,16 @@
 import type { FC, ReactNode } from "react";
-import { CircleArrowDown, X } from "lucide-react";
+import { X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import type { TaskProps } from "@/lib/storage-utils";
 
-interface TaskProps {
-  name: string;
-}
-
-export const Task: FC<TaskProps> = ({ name }): ReactNode => {
+export const Task: FC<TaskProps> = ({ title }): ReactNode => {
   return (
     <div className="flex items-center justify-between bg-gray-100 py-4 px-4 rounded-lg">
       <div className="flex items-center">
         <Checkbox className="w-6 h-6 border-2" />
-        <p className="ml-2 mr-2">{name}</p>
+        <p className="ml-2 mr-2">{title}</p>
       </div>
       <Button
         variant="destructive"
