@@ -46,10 +46,6 @@ export const TaskSection = (): ReactNode => {
             </div>
           ))}
         </div>
-
-        {/* <!-- <Button className="absolute right-0 top-0"> */}
-        {/* <CircleArrowDown size={32} /> */}
-        {/* </Button> --> */}
       </div>
     </section>
   );
