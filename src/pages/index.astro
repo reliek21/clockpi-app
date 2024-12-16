@@ -1,15 +1,11 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 
-// Astro Components
-
-// UI Components
-
-import HeaderSection from "@/sections/HeaderSection.astro";
 import { TaskSection } from "@/sections/TaskSection";
+import { HeaderSection } from "@/sections/HeaderSection";
 ---
 
 <Layout>
-    <HeaderSection totalTask={15} completedTasks={7} />
+    <HeaderSection client:load />
     <TaskSection client:load />
 </Layout>
